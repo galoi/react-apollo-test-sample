@@ -1,8 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import { render } from "react-dom";
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "react-apollo";
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import User from "./User";
+
+const client = new ApolloClient({
+  uri: "" // ここでGraphQL APIのエンドポイントを設定
+});
+
+const App = () => (
+  <ApolloProvider client={client}>
+    <User />
+  </ApolloProvider>
+);
+
+render(<App />, document.getElementById("root"));
