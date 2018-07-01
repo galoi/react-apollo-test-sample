@@ -4,7 +4,7 @@ import gql from "graphql-tag";
 
 export const GET_USER_QUERY = gql`
   {
-    User(id: "cjj1pcwquurwn0197qfpkl5ye") {
+    User(id: 1) {
       id
       name
     }
